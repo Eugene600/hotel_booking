@@ -1,0 +1,10 @@
+@if (selectedService()) {
+<div class="modal-overlay" (click)="closeModal()">
+    <div class="modal-card" (click)="$event.stopPropagation()">
+        <img [src]="selectedService()?.image" alt="{{ selectedService()?.title }}" />
+        <h2>{{ selectedService()?.title }}</h2>
+        <p>{{ selectedService()?.description }}</p>
+        <button class="close-btn" (click)="closeModal()">Close</button>
+    </div>
+</div>
+}

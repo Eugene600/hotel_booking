@@ -1,0 +1,26 @@
+.page-container {
+  scroll-snap-type: y mandatory;
+  height: 80vh;
+  scroll-behavior: smooth;
+}
+
+/* .page-section {
+  background-image: url('/../../../../../images/computer_lab.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  box-sizing: border-box; 
+  position: relative;
+  z-index: 1;
+  transform: translateY(50px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+} */
+
+
+
