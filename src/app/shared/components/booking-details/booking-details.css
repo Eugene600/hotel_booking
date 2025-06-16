@@ -53,6 +53,15 @@
     text-align: center;
 }
 
+.booking-card {
+    transition: transform 0.1s ease;
+}
+
+.booking-card:hover {
+  transform: translateY(-20px);
+  cursor: pointer;
+}
+
 
 .card-title {
     padding-top: 1rem;
