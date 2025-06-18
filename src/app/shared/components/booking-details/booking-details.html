@@ -27,20 +27,54 @@
         </div>
 
         <!-- Adults / Children Cards -->
-        <div class="booking-card">
-            <div class="card-title">Adults</div>
-            <div class="card-main">2</div>
-            <div class="card-sub arrow">&#x2304;
+        <div class="adults-children">
+            <div class="booking-card" (click)="toggleInputAdults('adults')" [class.active]="activeCardAdults() === 'adults'">
+                <div class="card-title">Adults</div>
+                <div class="card-main">{{ adults() }}</div>
+                <div class="card-sub arrow">&#x2304;
+                </div>
             </div>
+            @if (activeCardAdults() === 'adults') {
+            <div class="input-panel">
+                <span>12+ years</span>
+                <div class="input-apply">
+                    <input type="number" [(ngModel)]="tempValueAdults">
+                    <div class="apply" (click)="applyAdults('adults')">Apply</div>
+                </div>
+            </div>
+            }
         </div>
 
-        <div class="booking-card">
-            <div class="card-title">Children</div>
-            <div class="card-main">0</div>
-            <div class="card-sub arrow">&#x2304;
+        <div class="adults-children">
+            <div class="booking-card" (click)="toggleInputChildren('children')" [class.active]="activeCardChildren() === 'children'">
+                <div class="card-title">Children</div>
+                <div class="card-main">{{children()}}</div>
+                <div class="card-sub arrow">&#x2304;
+                </div>
             </div>
-        </div>
+            @if (activeCardChildren() === 'children') {
+            <div class="input-panel">
+                <div class="input-panel-children">
+                    <div class="child1">
+                        <span>0-4 years</span>
+                        <div class="input-apply">
+                            <input type="number" [(ngModel)]="tempValueChildren1">
+                            <div class="apply" (click)="applyChildren('children')">Apply</div>
+                        </div>
+                    </div>
+                    <div class="child2">
+                        <span>5-12 years</span>
+                        <div class="input-apply">
+                            <input type="number" [(ngModel)]="tempValueChildren2">
+                            <div class="apply" (click)="applyChildren('children')">Apply</div>
+                        </div>
+                    </div>
 
+                </div>
+
+            </div>
+            }
+        </div>
         <!-- 3-Segment Rectangle -->
         <div class="three-segment-card">
             <div class="segment">Bed & Breakfast Rates</div>
