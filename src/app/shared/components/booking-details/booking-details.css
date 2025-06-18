@@ -75,7 +75,7 @@
     cursor: pointer;
 }
 
-.booking-card-active {
+.booking-card.active {
     transform: translateY(-50px);
 }
 
@@ -158,14 +158,11 @@
     margin: 0;
 }
 
-.child1, 
+.child1,
 .child2 {
     display: flex;
 
 }
-
-
-
 
 /* Calendar overlay */
 .calendar-popup {
@@ -232,7 +229,6 @@
 .segment {
     flex: 1;
     font-size: 0.75rem;
-    /* padding: 0.65rem; */
     text-align: center;
     border-bottom: 1px solid #eee;
     color: #555;
@@ -242,10 +238,20 @@
     justify-content: center;
     width: 100%;
     box-sizing: border-box;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    height: 100%;
 }
+
 
 .segment:last-child {
     border-bottom: none;
+}
+
+.segment.selected {
+    border: 2px solid #6b4c7f;
+    transition: border 0.9s;
 }
 
 .button-container {
@@ -263,7 +269,6 @@ button {
     border-radius: 6px;
     font-weight: 600;
     cursor: pointer;
-    /* transition: background 0.3s; */
     width: 100%;
     text-transform: uppercase;
 }
@@ -275,14 +280,41 @@ button {
     border: 1px solid #b495c9;
 }
 
+.primary:hover {
+    opacity: 0.9;
+}
+
 .check-availability {
     flex: 2;
     background: #b495c9;
     color: white;
+    position: relative;
+    transition: background 0.3s;
 }
 
-button:hover {
-    opacity: 0.9;
+.check-availability::before {
+  content: 'Check Availability';
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.check-availability::after {
+  content: '⌄';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.check-availability:hover::before {
+  transform: translateY(-5px);
+}
+
+.check-availability:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
 }
 
 @media (max-width: 600px) {

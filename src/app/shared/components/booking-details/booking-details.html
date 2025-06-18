@@ -28,7 +28,8 @@
 
         <!-- Adults / Children Cards -->
         <div class="adults-children">
-            <div class="booking-card" (click)="toggleInputAdults('adults')" [class.active]="activeCardAdults() === 'adults'">
+            <div class="booking-card" (click)="toggleInputAdults('adults')"
+                [class.active]="activeCardAdults() === 'adults'">
                 <div class="card-title">Adults</div>
                 <div class="card-main">{{ adults() }}</div>
                 <div class="card-sub arrow">&#x2304;
@@ -46,7 +47,8 @@
         </div>
 
         <div class="adults-children">
-            <div class="booking-card" (click)="toggleInputChildren('children')" [class.active]="activeCardChildren() === 'children'">
+            <div class="booking-card" (click)="toggleInputChildren('children')"
+                [class.active]="activeCardChildren() === 'children'">
                 <div class="card-title">Children</div>
                 <div class="card-main">{{children()}}</div>
                 <div class="card-sub arrow">&#x2304;
@@ -77,15 +79,17 @@
         </div>
         <!-- 3-Segment Rectangle -->
         <div class="three-segment-card">
-            <div class="segment">Bed & Breakfast Rates</div>
-            <div class="segment">Half Board Rates</div>
-            <div class="segment">Full Board Rates</div>
+            @for(label of segmentLabels; track $index; let i = $index) {
+            <div class="segment" [class.selected]="selectedSegment() ===i" (click)="selectSegment(i)">{{label}}</div>
+            }
         </div>
 
         <!-- Button container -->
         <div class="button-container">
             <button class="primary">Have a Promotion Code</button>
-            <button class="check-availability">Check Availability</button>
+            <button class="check-availability">
+                
+            </button>
         </div>
     </div>
 </div>

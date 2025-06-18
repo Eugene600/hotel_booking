@@ -19,7 +19,7 @@ export class BookingDetails {
   tempValueAdults = signal<number>(0);
   tempValueChildren1 = signal<number>(0);
   tempValueChildren2 = signal<number>(0);
-  tempValueChildrenTotal = computed(() => 
+  tempValueChildrenTotal = computed(() =>
     this.tempValueChildren1() + this.tempValueChildren2()
   );
 
@@ -28,7 +28,7 @@ export class BookingDetails {
     if (this.activeCardAdults() === card) {
       this.activeCardAdults.set(null);
     } else {
-      this.tempValueAdults.set(this[card]()) ;
+      this.tempValueAdults.set(this[card]());
       this.activeCardAdults.set(card);
     }
   }
@@ -54,4 +54,20 @@ export class BookingDetails {
     this[card].set(this.tempValueChildrenTotal());
     this.activeCardChildren.set(null); // hide input after applying
   }
+
+  segmentLabels = ['Bed & Breakfast Rates', 'Half Board Rates', 'Full Board Rates'];
+
+  // signal to track selected segment index
+  selectedSegment = signal<number>(0);
+
+  selectSegment(index: number) {
+    this.selectedSegment.set(index);
+  }
+
+  indicatorTransform = computed(() => {
+    const index = this.selectedSegment();
+    return `translateY(${index * 20}%)`;
+  });
+
+
 }

@@ -1,31 +1,4 @@
 <section class="services-section">
-    <div class="section-header">
-        <h3>Our Solutions</h3>
-        <h1>Designed to Empower Schools & Students</h1>
-        <p class="section-subtext">
-            We offer products that solve real academic and student-life challenges through smart automation and seamless
-            experiences.
-        </p>
-    </div>
-
-    @for (service of services; track service.id; let i = $index) {
-    <div class="service-item" [class.reverse]="i % 2 === 1">
-        <div class="service-image">
-            <img [src]="service.image" [alt]="service.title" />
-        </div>
-        <div class="service-content">
-            <h2>{{ service.title }}</h2>
-            <p>{{ service.overview }}</p>
-            <button class="learn-btn" (click)="openModal(service)">Learn More</button>
-        </div>
-    </div>
-    }
-
-
-    @if (selectedService()) {
-    <app-service-overview [selectedService]="selectedService()" (close)="closeModal()" />
-    }
-
-    <app-footer />
+    <app-booking-details />
 
 </section>

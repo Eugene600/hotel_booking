@@ -5,11 +5,12 @@ import { ServiceOverview } from "../../components/service-overview/service-overv
 import { Service } from '../../models/service.model';
 import { CoreModule } from "../../../../core/core-module";
 import { Footer } from "../../../../core/layout/footer/footer";
+import { SharedModule } from '../../../../shared/shared-module';
 
 
 
 @Component({
-  imports: [FontAwesomeModule, ServiceOverview, CoreModule, Footer],
+  imports: [FontAwesomeModule, CoreModule, SharedModule],
   templateUrl: './services.html',
   styleUrl: './services.css'
 })
