@@ -4,12 +4,15 @@
   align-items: center;
   justify-content: center;
   background-color: #f9f8fb;    
-  min-height: 100vh;
+  max-height: 75vh;
+  border: 1px solid white;
+  padding: 4rem;
+  margin: 3rem;
 }
 
 .content-box {
   width: 100%;
   max-width: 1200px;
-  padding: 2rem;
+  /* padding: 2rem; */
   box-sizing: border-box;
 }

@@ -1,7 +1,11 @@
 .booking-details {
-    text-align: center;
+    /* text-align: center; */
     padding: 2rem;
     width: 100%;
+}
+
+.booking-description {
+    text-align: center;
 }
 
 .booking-title {
@@ -36,7 +40,7 @@
     gap: 1rem;
     align-items: stretch;
     justify-content: center;
-    margin-top: 4rem;
+    margin-top: 10rem;
 }
 
 .adults-children {
