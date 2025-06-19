@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   background-color: #f9f8fb;    
-  max-height: 75vh;
+  max-height: 80vh;
   border: 1px solid white;
-  padding: 4rem;
-  margin: 3rem;
+  padding: 1rem;
+  margin: 3rem auto;
+  max-width: 1400px;
 }
 
 .content-box {
