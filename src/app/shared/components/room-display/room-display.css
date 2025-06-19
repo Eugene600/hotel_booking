@@ -1,0 +1,160 @@
+.room-card {
+    display: flex;
+    overflow: hidden;
+    padding: 1.5rem;
+    gap: 2rem;
+    margin: 2rem;
+    max-width: 1200px;
+}
+
+.room-image {
+    flex: 1;
+}
+
+.room-image img {
+    width: 300px;
+    height: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.room-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.room-top {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.85rem;
+    color: black;
+}
+
+.room-title {
+    font-size: 1.8rem;
+    color: #b495c9;
+    margin: 0.5rem 0;
+}
+
+.rating {
+    font-size: 1.2rem;
+    color: #ffc107;
+}
+
+.room-description {
+    margin-top: 1rem;
+}
+
+.room-description h4 {
+    margin-bottom: 0.5rem;
+}
+
+.room-description {
+    color: #666;
+}
+
+.amenities-details {
+    flex: 1;
+}
+
+.room-amenities {
+    margin: 1.5rem 0;
+}
+
+.amenity-icons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.7rem;
+}
+
+.amenity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 2.75rem;
+    text-align: center;
+    font-size: 0.75rem;
+}
+
+.icon-circle {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background-color: #f0ebf8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #6b4c7f;
+    margin-bottom: 0.4rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.amenity-label {
+    margin-top: 0.2rem;
+    font-size: 0.6rem;
+}
+
+.room-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.price-info {
+    display: flex;
+    gap: 3rem;
+
+}
+
+.price-info small {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.price {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.currency {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.amount {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6b4c7f;
+}
+
+
+.room-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.outline-btn,
+.filled-btn {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.outline-btn {
+    border: 2px solid #b495c9;
+    background: transparent;
+    color: #b495c9;
+}
+
+.filled-btn {
+    border: none;
+    background: #b495c9;
+    color: white;
+}
