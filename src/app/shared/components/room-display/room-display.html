@@ -1,9 +1,24 @@
 <hr>
 <div class="room-card">
     <!-- Image Section -->
-    <div class="room-image">
-        <img src="images/white_classroom.jpg" alt="Room" />
+    <div class="room-image-carousel">
+        <div class="image-wrapper">
+            <img [src]="roomImages()[currentImageIndex()]" alt="Room" />
+
+            <button class="nav left" (click)="prevImage()">&#10094;</button>
+            <button class="nav right" (click)="nextImage()">&#10095;</button>
+        </div>
+
+         <div class="dots">
+            @for (img of roomImages(); track $index; let i = $index) {
+                <span [class.active]="i === currentImageIndex()" (click)="goToImage(i)"></span>
+            }
+         </div>
     </div>
+
+    <!-- <div class="room-image">
+        <img src="images/white_classroom.jpg" alt="Room" />
+    </div> -->
 
     <!-- Content Section -->
     <div class="room-details">
@@ -57,8 +72,12 @@
 
             </div>
             <div class="room-actions">
-                <button class="outline-btn">Explore Room</button>
-                <button class="filled-btn">Book Now Pay Later</button>
+                <button class="outline-btn">
+                    <div class="outline-btn-label">Explore Room </div><span class="arrow">→</span>
+                </button>
+                <button class="filled-btn">
+                    <div class="filled-btn-label">Book Now Pay Later</div>
+                </button>
             </div>
         </div>
     </div>
