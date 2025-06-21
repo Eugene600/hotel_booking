@@ -2,6 +2,7 @@ import { Component, signal } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared-module';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-home',
   imports: [SharedModule],

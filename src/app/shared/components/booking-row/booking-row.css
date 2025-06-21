@@ -1,0 +1,286 @@
+.booking-form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: stretch;
+    justify-content: center;
+    margin-top: 4rem;
+}
+
+.adults-children {
+    flex: 0 0 160px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 160px;
+    position: relative;
+    z-index: 1;
+}
+
+.booking-card,
+.three-segment-card {
+    flex: 0 0 160px;
+    aspect-ratio: 3/2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.2s ease-out;
+    position: relative;
+    z-index: 2;
+}
+
+.booking-card {
+    transition: transform 0.1s ease;
+}
+
+.booking-card:hover {
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+
+.booking-card.active {
+    transform: translateY(-50px);
+}
+
+.booking-input-wrapper {
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.input-panel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    background: #f5f5f5;
+    padding: 0.5rem;
+    border-radius: 4px;
+    margin-top: 0.5rem;
+    width: 100%;
+    background: #fff;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+    box-sizing: border-box;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 0;
+    transform: translateY(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.adults-children .input-panel {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+.input-panel span {
+    font-size: 0.65rem;
+    color: brown;
+    white-space: wrap;
+    display: flex;
+    justify-content: flex-start;
+    text-transform: uppercase;
+}
+
+.input-apply {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem 0.5rem;
+    box-sizing: border-box;
+}
+
+.input-apply input {
+    border: 1px solid black;
+    outline: none;
+    padding: 0.25rem;
+    font-size: 1rem;
+    width: 20px;
+    text-align: center;
+}
+
+.apply {
+    border: 1px solid black;
+    padding: 0.25rem;
+    font-size: 1rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: #6b4c7f;
+    cursor: pointer;
+}
+
+
+
+.input-panel input::-webkit-outer-spin-button,
+.input-panel input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.child1,
+.child2 {
+    display: flex;
+
+}
+
+/* Calendar overlay */
+.calendar-popup {
+    position: absolute;
+    top: -280px;
+    left: 0;
+    width: calc(100% + 1rem);
+    background: white;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+    padding: 1rem;
+    border-radius: 10px;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Fade in animation for calendar */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.card-title {
+    padding-top: 1rem;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.card-main {
+    font-size: 5rem;
+    color: #b495c9;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-sub {
+    padding-bottom: 1rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    color: #888;
+}
+
+.arrow {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.three-segment-card {
+    flex: 0 0 200px;
+    min-width: 200px;
+    max-width: 250px;
+    aspect-ratio: auto;
+}
+
+.segment {
+    flex: 1;
+    font-size: 0.75rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    color: #555;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    z-index: 2;
+    position: relative;
+    height: 100%;
+}
+
+
+.segment:last-child {
+    border-bottom: none;
+}
+
+.segment.selected {
+    border: 2px solid #6b4c7f;
+    transition: border 0.9s;
+}
+
+.button-container {
+    flex: 1 1 auto;
+    min-width: 200px;
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+button {
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    text-transform: uppercase;
+}
+
+.primary {
+    flex: 1;
+    background: #fff;
+    color: #6b4c7f;
+    border: 1px solid #b495c9;
+}
+
+.primary:hover {
+    opacity: 0.9;
+}
+
+.check-availability {
+    flex: 2;
+    background: #b495c9;
+    color: white;
+    position: relative;
+    transition: background 0.3s;
+}
+
+.check-availability::before {
+  content: 'Check Availability';
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.check-availability::after {
+  content: '⌄';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  opacity: 0;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.check-availability:hover::before {
+  transform: translateY(-5px);
+}
+
+.check-availability:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
