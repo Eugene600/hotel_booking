@@ -31,17 +31,7 @@
     <div class="amenities-details">
         <!-- Amenities -->
         <div class="room-amenities">
-            <h4>Amenities</h4>
-            <div class="amenity-icons">
-                @for (amenity of amenities; track $index) {
-                <div class="amenity-item">
-                    <div class="icon-circle">
-                        <fa-icon [icon]="amenity.icon"></fa-icon>
-                    </div>
-                    <span class="amenity-label">{{amenity.label}}</span>
-                </div>
-                }
-            </div>
+            <app-amenities-icons />
         </div>
 
         <div class="room-price">
