@@ -9,7 +9,7 @@ import { RoomDisplay } from './components/room-display/room-display';
   imports: [
     CommonModule,
     BookingDetails,
-    RoomDisplay
+    RoomDisplay,
   ],
   exports: [
     BookingDetails,

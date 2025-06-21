@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared-module';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,5 +9,11 @@ import { SharedModule } from '../../../../shared/shared-module';
   styleUrl: './home.css'
 })
 export class Home {
+  showStickyHeader = signal<boolean>(false);
 
+  constructor(private router: Router) {}
+
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 }

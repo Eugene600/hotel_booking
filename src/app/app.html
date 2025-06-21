@@ -1,5 +1,7 @@
 <div class="app-container">
+  @if (shouldShowHeader()) {
   <app-header></app-header>
+  }
 
   <main class="content-box">
     <router-outlet></router-outlet>

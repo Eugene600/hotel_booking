@@ -22,4 +22,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/services/services-module').then((m) => m.ServicesModule),
   },
+  {
+    path: 'login',
+    loadChildren: () =>
+      import('./features/auth/auth-module').then((m) => m.AuthModule),
+  },
 ];
