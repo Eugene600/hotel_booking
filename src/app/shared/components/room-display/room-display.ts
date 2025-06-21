@@ -1,16 +1,24 @@
 import { Component, computed, signal } from '@angular/core';
 import { faLaptop, faUtensils, faSpa, faDumbbell, faHotTub, faConciergeBell, faVideo, faPhone, faBath, faUserMd, faClock, faShieldAlt } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { Router } from '@angular/router';
+import { ImageCarousel } from "../image-carousel/image-carousel";
 
 
 
 @Component({
   selector: 'app-room-display',
-  imports: [FontAwesomeModule],
+  imports: [FontAwesomeModule, ImageCarousel],
   templateUrl: './room-display.html',
   styleUrl: './room-display.css'
 })
 export class RoomDisplay {
+  constructor(private router: Router) { }
+
+  goToExploreRoom() {
+    this.router.navigate(['/explore-room']);
+  }
+
   amenities = [
     { icon: faLaptop, label: 'Workdesk' },
     { icon: faUtensils, label: 'Bed & Breakfast' },
@@ -26,35 +34,4 @@ export class RoomDisplay {
     { icon: faShieldAlt, label: 'Security' },
   ];
 
-  // Signal holding the image list
-  readonly roomImages = signal<string[]>([
-    'images/future_classroom1.jpeg',
-    'images/future_classroom2.jpeg',
-    'images/laptop_with_software.jpeg',
-  ]);
-
-  // Signal to track the current image index
-  currentImageIndex = signal(0);
-
-  // Computed signal to return current image URL
-  currentImage = computed(() => this.roomImages()[this.currentImageIndex()]);
-
-  prevImage() {
-    const newIndex =
-      (this.currentImageIndex() - 1 + this.roomImages().length) %
-      this.roomImages().length;
-
-    this.currentImageIndex.set(newIndex);
-  }
-
-  nextImage() {
-    const newIndex =
-      (this.currentImageIndex() + 1) % this.roomImages().length;
-
-    this.currentImageIndex.set(newIndex);
-  }
-
-  goToImage(index: number) {
-    this.currentImageIndex.set(index);
-  }
 }

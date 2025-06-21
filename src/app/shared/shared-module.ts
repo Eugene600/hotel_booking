@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { BookingDetails } from './components/booking-details/booking-details';
 import { RoomDisplay } from './components/room-display/room-display';
 import { BookingRow } from './components/booking-row/booking-row';
+import { ImageCarousel } from './components/image-carousel/image-carousel';
 
 
 @NgModule({
@@ -12,11 +13,13 @@ import { BookingRow } from './components/booking-row/booking-row';
     BookingDetails,
     RoomDisplay,
     BookingRow,
+    ImageCarousel,
   ],
   exports: [
     BookingDetails,
     RoomDisplay,
     BookingRow,
+    ImageCarousel,
   ],
 })
 export class SharedModule { }

@@ -1,0 +1,12 @@
+<div class="image-wrapper">
+    <img [src]="roomImages()[currentImageIndex()]" alt="Room" />
+
+    <button class="nav left" (click)="prevImage()">&#10094;</button>
+    <button class="nav right" (click)="nextImage()">&#10095;</button>
+</div>
+
+<div class="dots">
+    @for (img of roomImages(); track $index; let i = $index) {
+    <span [class.active]="i === currentImageIndex()" (click)="goToImage(i)"></span>
+    }
+</div>
