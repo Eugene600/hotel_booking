@@ -46,10 +46,28 @@ export class ImageCarousel {
     this.currentImageIndex.set(index);
   }
 
-  fullscreenMode = signal(false);
+  fullscreenMode = signal<boolean>(false);
+  isAnimatingIn = signal<boolean>(false);
+  isAnimatingOut = signal<boolean>(false);
 
   toggleFullscreen() {
-    this.fullscreenMode.update(value => !value);
+    if (!this.fullscreenMode()) {
+      this.isAnimatingIn.set(true);
+      this.fullscreenMode.set(true);
+    } else {
+      this.isAnimatingOut.set(true);
+    }
+  }
+
+  onAnimationEnd() {
+    if (this.isAnimatingOut()) {
+      this.fullscreenMode.set(false);
+      this.isAnimatingOut.set(false);
+    }
+
+    if (this.isAnimatingIn()) {
+      this.isAnimatingIn.set(false);
+    }
   }
 
   @HostListener('document:keydown', ['$event'])
@@ -64,9 +82,8 @@ export class ImageCarousel {
         this.nextImage();
         break;
       case 'Escape':
-        this.fullscreenMode.set(false);
+        this.isAnimatingOut.set(true);
         break;
     }
   }
-
 }

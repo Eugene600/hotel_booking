@@ -18,17 +18,18 @@
 </div>
 
 @if (fullscreenMode()) {
-  <div class="fullscreen-overlay">
+<div class="fullscreen-overlay" [class.entering]="isAnimatingIn()" [class.exiting]="isAnimatingOut()"
+    (animationend)="onAnimationEnd()">
     <button class="close-btn" (click)="toggleFullscreen()">×</button>
     <img [src]="roomImages()[currentImageIndex()]" alt="Room" class="fullscreen-image" />
-    
+
     <button class="nav left" (click)="prevImage()">&#10094;</button>
     <button class="nav right" (click)="nextImage()">&#10095;</button>
 
     <div class="dots fullscreen-dots">
-      @for (img of roomImages(); track $index; let i = $index) {
+        @for (img of roomImages(); track $index; let i = $index) {
         <span [class.active]="i === currentImageIndex()" (click)="goToImage(i)"></span>
-      }
+        }
     </div>
-  </div>
+</div>
 }
