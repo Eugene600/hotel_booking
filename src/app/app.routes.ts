@@ -27,4 +27,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/auth/auth-module').then((m) => m.AuthModule),
   },
+  {
+    path: 'explore-room',
+    loadChildren: () =>
+      import('./features/explore-room/explore-room-module').then((m) => m.ExploreRoomModule),
+  },
 ];

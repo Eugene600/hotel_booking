@@ -1,0 +1,179 @@
+hr {
+    margin-top: 2rem;
+    margin-left: -7rem;
+    margin-right: -6rem;
+}
+
+.room-details-container {
+    display: flex;
+    gap: 1rem;
+    position: relative;
+}
+
+.room-details {
+    flex: 2;
+    display: flex;
+    gap: 1rem;
+}
+
+.vertical-divider {
+    width: 1px;
+    background-color: black;
+    opacity: 0.6;
+    align-self: stretch;
+    margin: 0 1rem;
+    margin-top: -0.5rem;
+    margin-bottom: -2rem;
+}
+
+.image-carousel {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    flex: 1;
+    /* max-width: 300px; */
+}
+
+.room-description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.row-1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.row-1 div {
+    color: #b28d56;
+    font-size: 1.5rem;
+}
+
+.row-1 strong {
+    font-size: 1.5rem;
+}
+
+.room-title {
+    font-size: 3.5rem;
+    color: #b495c9;
+    margin: 0.7rem 0;
+}
+
+.room-description {
+    margin-top: 1rem;
+}
+
+.room-description h4 {
+    margin-bottom: 0.5rem;
+}
+
+.room-description {
+    color: #666;
+}
+
+.room-amenities {
+    gap: 1rem;
+}
+
+.room-pricing {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.pricing {
+    margin-top: 1rem;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.pricing-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.25rem;
+    color: #444;
+    padding-top: 0.5rem;
+}
+
+.pricing-row strong {
+    font-weight: 600;
+    color: #000;
+}
+
+.price-divider {
+    width: 100%;
+    border: none;
+    height: 1px;
+    background-color: #e0e0e0;
+    margin: 3rem 0;
+}
+
+
+.price-info {
+    display: flex;
+    padding-top: 1rem;
+    /* margin-top: 4rem; */
+    justify-content: space-between;
+
+}
+
+.price-info small {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+}
+
+.price {
+    display: flex;
+    gap: 0.25rem;
+}
+
+.currency {
+    font-size: 0.8rem;
+    color: #555;
+}
+
+.amount {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #6b4c7f;
+}
+
+.button {
+    padding: 1rem;
+}
+
+.outline-btn {
+    width: 100%;
+    padding: 1.8rem 1.2rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    border: 2px solid #b495c9;
+    background: transparent;
+    color: #b495c9;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    position: relative;
+}
+
+.hover-arrow {
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-size: 1rem;
+}
+
+.outline-btn:hover .outline-btn-label {
+    transform: translateX(-2.5rem);
+}
+
+.outline-btn:hover .hover-arrow {
+    opacity: 1;
+    transform: translateX(3.125rem);
+}

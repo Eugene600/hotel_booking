@@ -1,0 +1,29 @@
+.explore-room-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    scroll-snap-type: y mandatory;
+    height: 80vh;
+    scroll-behavior: smooth;
+}
+
+.room-section {
+    height: 80vh;
+    scroll-snap-align: start;
+}
+
+.booking-details {
+    display: flex;
+}
+
+.back-btn {
+    background: transparent;
+    border: none;
+    gap: 1rem;
+}
+
+.back-btn fa-icon {
+    cursor: pointer;
+    color: #6b4c7f;
+    font-size: 2rem;
+}
