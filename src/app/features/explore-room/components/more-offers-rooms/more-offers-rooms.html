@@ -1,0 +1,28 @@
+<hr>
+<div class="container">
+    <div class="image-carousel">
+        <app-image-carousel />
+    </div>
+    <div class="room-description">
+        <div class="row-1">
+            <div class="location"><fa-icon [icon]="faLocationDot"></fa-icon> {{room()?.location}}</div>
+            <strong class="rooms-left">{{room()?.roomsLeft}} rooms left</strong>
+        </div>
+        <div class="room-title">{{room()?.title}}</div>
+        <div class="room-ratings">{{room()?.rating}}</div>
+        <div class="room-describe">
+            <h4>Description</h4>
+            <p>
+                {{room()?.description}}
+            </p>
+        </div>
+        <div class="buttons">
+            <button class="outline-btn">
+                <div class="outline-btn-label">Explore Room </div><span class="arrow">→</span>
+            </button>
+            <button class="filled-btn">
+                <div class="filled-btn-label">Book Now Pay Later</div>
+            </button>
+        </div>
+    </div>
+</div>

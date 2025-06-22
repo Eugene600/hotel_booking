@@ -9,5 +9,28 @@
         <div class="room-details">
             <app-room-details />
         </div>
+        <div class="more-offers-container">
+            <div class="more-offers">
+                <div class="label">More Offers</div>
+                <div class="next-buttons">
+                    <button class="nav left" [class.disabled]="atStart" (click)="prevSlide()" [disabled]="atStart">
+                        &#10094;
+                    </button>
+                    <button class="nav right" [class.disabled]="atEnd" (click)="nextSlide()" [disabled]="atEnd">
+                        &#10095;
+                    </button>
+                </div>
+            </div>
+            <div class="more-offers-rooms">
+                @for (room of visibleRooms(); let i=$index ;track room.id) {
+                <ng-container>
+                    <app-more-offers-rooms [room]="room" />
+                    @if (i === 0) {
+                    <div class="vertical-divider"></div>
+                    }
+                </ng-container>
+                }
+            </div>
+        </div>
     </section>
 </div>

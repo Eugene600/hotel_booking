@@ -27,3 +27,68 @@
     color: #6b4c7f;
     font-size: 2rem;
 }
+
+.more-offers-container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+}
+
+.more-offers {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.more-offers .label {
+    font-size: 2.5rem;
+    color: #6b4c7f;
+}
+
+.more-offers .next-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav {
+    background-color: #6b4c7f;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+}
+
+.nav.disabled {
+    background-color: white;
+    color: #ccc;
+    cursor: not-allowed;
+    border: 1px solid #ccc;
+}
+
+hr {
+    margin-left: -7rem;
+    margin-right: -5.9rem;
+}
+
+.more-offers-rooms {
+    display: flex;
+    gap: 1rem;
+    align-items: stretch;
+    overflow: hidden;
+}
+
+
+.vertical-divider {
+    width: 1px;
+    background-color: #ccc;
+    height: auto;
+    margin: 0 1rem;
+    opacity: 0.6;
+}

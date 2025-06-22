@@ -3,6 +3,12 @@
 
     <button class="nav left" (click)="prevImage()">&#10094;</button>
     <button class="nav right" (click)="nextImage()">&#10095;</button>
+
+    @if (showFullscreenToggle()) {
+    <button class="fullscreen-toggle" (click)="toggleFullscreen()">
+        <fa-icon [icon]="faExpand"></fa-icon>
+    </button>
+    }
 </div>
 
 <div class="dots">
@@ -10,3 +16,19 @@
     <span [class.active]="i === currentImageIndex()" (click)="goToImage(i)"></span>
     }
 </div>
+
+@if (fullscreenMode()) {
+  <div class="fullscreen-overlay">
+    <button class="close-btn" (click)="toggleFullscreen()">×</button>
+    <img [src]="roomImages()[currentImageIndex()]" alt="Room" class="fullscreen-image" />
+    
+    <button class="nav left" (click)="prevImage()">&#10094;</button>
+    <button class="nav right" (click)="nextImage()">&#10095;</button>
+
+    <div class="dots fullscreen-dots">
+      @for (img of roomImages(); track $index; let i = $index) {
+        <span [class.active]="i === currentImageIndex()" (click)="goToImage(i)"></span>
+      }
+    </div>
+  </div>
+}
