@@ -1,0 +1,82 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    gap: 2rem;
+}
+
+.row-1 {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.row-1 fa-icon {
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.row-1 .text {
+    font-size: 1.5rem;
+    color: #666;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.outline-btn,
+.filled-btn {
+    padding: 2rem 2rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 0.75rem;
+    align-items: center;
+}
+
+.outline-btn {
+    border: 2px solid #b495c9;
+    background: transparent;
+    color: #b495c9;
+    display: flex;
+    justify-content: flex-start;
+    transition: transform 0.3s ease-in-out;
+    gap: 2rem;
+    padding: 0 4rem;
+}
+
+.outline-btn fa-icon {
+    font-size: 1rem;
+}
+
+.outline-btn:hover {
+    transform: translateY(-0.625rem);
+}
+
+.filled-btn {
+    display: flex;
+    border: none;
+    background: #b495c9;
+    font-size: 1rem;
+    color: white;
+    opacity: 0.8;
+    transition: transform 0.3s ease-in-out;
+    padding-left: 4rem;
+    padding-right: 4rem;
+    gap: 1rem;
+
+}
+
+.filled-btn:hover {
+    transform: translateY(-0.625rem);
+}
+
+
+.filled-btn:hover fa-icon {
+    transform: translateX(0.25rem);
+}

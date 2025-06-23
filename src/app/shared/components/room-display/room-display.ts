@@ -18,4 +18,8 @@ export class RoomDisplay {
   goToExploreRoom() {
     this.router.navigate(['/explore-room']);
   }
+
+  goToBookNow() {
+    this.router.navigate(['/book-now-pay-later'])
+  }
 }

@@ -2,6 +2,7 @@ import { Component, input } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared-module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -21,5 +22,11 @@ export class MoreOffersRooms {
     rating: string;
     description: string;
   }>();
+
+  constructor(private router:Router) {};
+
+  goToBookNow() {
+    this.router.navigate(['/book-now-pay-later'])
+  }
 
 }
