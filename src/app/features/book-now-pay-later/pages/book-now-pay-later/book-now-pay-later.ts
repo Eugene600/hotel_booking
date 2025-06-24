@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faChevronRight, faAngleLeft } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';
@@ -15,7 +15,14 @@ export class BookNowPayLater {
   faAngleLeft = faAngleLeft;
   faPlus = faPlus;
   faChevronRight = faChevronRight;
-  constructor(private location: Location) {}
+
+  totalPrice = signal(0);
+
+  updateTotal = (price: number) => {
+    this.totalPrice.set(price);
+  };
+
+  constructor(private location: Location) { }
 
   goBack() {
     this.location.back();

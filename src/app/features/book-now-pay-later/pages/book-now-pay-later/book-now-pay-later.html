@@ -5,7 +5,7 @@
     </div>
 
     <div class="room-pricing">
-        <app-room-pricing />
+        <app-room-pricing (totalPriceChanged)="updateTotal($event)" />
     </div>
 
     <div class="buttons">
@@ -14,7 +14,7 @@
             <div class="outline-btn-label">Add Room</div>
         </button>
         <button class="filled-btn">
-            <div class="filled-btn-label"><strong>Proceed</strong> (Kes 18,000)</div>
+            <div class="filled-btn-label"><strong>Proceed</strong> (Kes {{totalPrice()}})</div>
             <fa-icon [icon]="faChevronRight"></fa-icon>
         </button>
     </div>

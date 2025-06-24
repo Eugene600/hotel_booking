@@ -3,26 +3,39 @@
 
     <div class="adults-section">
         <div class="label">Adults</div>
-        <input type="number">
-        <fa-icon [icon]="faMinus"></fa-icon>
+        <input type="number" [value]="adults()" readonly>
+        <fa-icon [icon]="faMinus" (click)="decreaseAdults()"></fa-icon>
         <div class="vertical-divider"></div>
-        <fa-icon [icon]="faPlus"></fa-icon>
+        <fa-icon [icon]="faPlus" (click)="increaseAdults()"></fa-icon>
     </div>
 
     <div class="children-section">
         <div class="label">Children</div>
-        <input type="number">
-        <fa-icon [icon]="faMinus"></fa-icon>
+        <input type="number" [value]="children()" readonly>
+        <fa-icon [icon]="faMinus" (click)="decreaseChildren()"></fa-icon>
         <div class="vertical-divider"></div>
-        <fa-icon [icon]="faPlus"></fa-icon>
+        <fa-icon [icon]="faPlus" (click)="increaseChildren()"></fa-icon>
     </div>
 
-    <div class="bed-number">
-        <div class="bed">Two Bed</div>
-        <fa-icon [icon]="faChevronDown"></fa-icon>
+    <div class="bed-selector">
+        <div class="bed-number" (click)="toggleDropdown()">
+            <div class="bed">{{ selectedBed() }}</div>
+            <fa-icon [icon]="faChevronDown"></fa-icon>
+        </div>
+
+        @if (dropdownOpen()) {
+        <div class="dropdown-menu">
+            @for (option of bedOptions; track $index) {
+            <div class="dropdown-item" (click)="selectBed(option)">
+                {{ option }}
+            </div>
+            }
+        </div>
+        }
     </div>
+
 
     <div class="price">
-        <span class="currency">Kes</span> <strong class="amount">48,100</strong>
+        <span class="currency">Kes</span> <strong class="amount">{{totalPrice()}}</strong>
     </div>
 </div>
