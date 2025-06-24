@@ -1,4 +1,4 @@
-import { Component, computed, effect, output, signal } from '@angular/core';
+import { Component, computed, effect, input, output, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faMinus, faChevronDown, faChevronRight } from '@fortawesome/free-solid-svg-icons';
@@ -17,6 +17,7 @@ export class RoomPricing {
 
   adults = signal<number>(2);
   children = signal<number>(0);
+  roomNumber = input<number>(1);
 
   selectedBed = signal('Two Bed');
   dropdownOpen = signal(false);

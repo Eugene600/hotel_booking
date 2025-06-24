@@ -5,11 +5,19 @@
     </div>
 
     <div class="room-pricing">
-        <app-room-pricing (totalPriceChanged)="updateTotal($event)" />
+        @for (roomId of rooms(); let i = $index; track roomId) {
+        <div class="room-wrapper" style="position: relative">
+            @if (i > 0) {
+            <fa-icon [icon]="faXmark" class="remove-room-btn" (click)="removeRoom(roomId)"></fa-icon>
+            }
+
+            <app-room-pricing (totalPriceChanged)="updateTotal(roomId, $event)" [roomNumber]="i + 1" />
+        </div>
+        }
     </div>
 
     <div class="buttons">
-        <button class="outline-btn">
+        <button class="outline-btn" (click)="addRoom()">
             <fa-icon [icon]="faPlus"></fa-icon>
             <div class="outline-btn-label">Add Room</div>
         </button>
