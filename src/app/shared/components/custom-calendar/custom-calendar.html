@@ -1,0 +1,30 @@
+<div class="date-picker-container">
+    <div class="calendar-header">
+        <div class="month-year-display">
+            <span class="current-month-year">{{ currentMonthName() }} {{ currentYear() }}</span>
+            <span class="dropdown-arrow"></span>
+        </div>
+
+        <div class="navigation-arrows">
+            <button class="nav-arrow" (click)="goToPreviousMonth()">&#x2329;</button>
+            <button class="nav-arrow" (click)="goToNextMonth()">&#x232A;</button>
+        </div>
+    </div>
+
+    <div class="weekdays">
+        @for (day of weekdays; track $index) {
+        <span>{{ day }}</span>
+        }
+    </div>
+
+    <div class="calendar-grid">
+        @for (day of calendarDays(); track $index) {
+        <ng-container>
+            <div class="calendar-day" [class.empty]="!day.date" [class.selected]="day.date && isSelectedDate(day.date)"
+                [class.today]="day.date && isToday(day.date)" (click)="day.date && selectDate(day.date)">
+                {{ day.date ? day.date.getDate() : '' }}
+            </div>
+        </ng-container>
+        }
+    </div>
+</div>

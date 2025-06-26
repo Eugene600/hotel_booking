@@ -5,15 +5,33 @@
     justify-content: center;
     margin: 3rem;
     gap: 2rem;
-    height: 60vh;
+    height: 70vh;
+    position: relative;
 }
 
 .logo {
-  color: #b495c9;
-  font-size: 2.5rem;
-  height: 3.75rem;
-  width: 3.75rem;
+    color: #b495c9;
+    font-size: 2.5rem;
+    height: 3.75rem;
+    width: 3.75rem;
 }
+
+.date-picker-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.calendar-popup {
+    position: absolute;
+    bottom: 100%;
+    left: 40%;
+    top: 0%;
+    transform: translateX(-50%) translateY(-0.5rem);
+    z-index: 999;
+}
+
 
 .date-selection-container {
     display: flex;
@@ -90,4 +108,8 @@
     background-color: #7a4f9e;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transform: translateY(-5px);
+}
+
+.date-calendar {
+    height: 100%;
 }
