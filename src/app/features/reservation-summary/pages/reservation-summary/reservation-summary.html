@@ -1,0 +1,99 @@
+<div class="container">
+    <div class="row-1">
+        <fa-icon [icon]="faAngleLeft" (click)="goBack()"></fa-icon>
+        <div class="text">Reservation summary</div>
+    </div>
+
+    <div class="row-2">
+        <div class="price-total">
+            <div class="room-title">Queen Luxury Room Elementaita</div>
+            <hr>
+            <div class="room-count">
+                <div class="label">Room Count</div>
+                <div class="count">{{roomNumber()}}</div>
+            </div>
+            <hr>
+            <div class="taxes">
+                <div class="label">Taxes</div>
+                <div class="count">Kes <strong>1,200</strong></div>
+            </div>
+            <hr>
+            <div class="total">
+                <div class="label">Sub Total</div>
+                <div class="count">Kes <strong>{{subTotal()}}</strong></div>
+            </div>
+            <button class="filled-btn" (click)="goToBookNow()">
+                <div class="filled-btn-label">Edit Reservation</div>
+            </button>
+        </div>
+
+        <div class="calendar">
+            <div class="check-in">
+                <div class="title">Check in</div>
+                <div class="day">23</div>
+                <div class="date">Apr 2023</div>
+            </div>
+            <hr>
+            <div class="check-out">
+                <div class="title">Check out</div>
+                <div class="day">27</div>
+                <div class="date">Apr 2023</div>
+            </div>
+            <hr>
+            <button class="filled-btn" (click)="goToEditDates()">
+                <div class="filled-btn-label">Edit Dates</div>
+            </button>
+        </div>
+
+        <div class="form-container">
+            <form>
+                <input type="text" placeholder="First Name" />
+                <input type="text" placeholder="Last Name" />
+                <input type="tel" placeholder="Phone Number" />
+                <input type="email" placeholder="Email Address" />
+                <input type="email" placeholder="Confirm Email Address" />
+                <input type="text" placeholder="City / State" />
+            </form>
+        </div>
+
+
+        <div class="final-card">
+            <div class="special-requests">
+                <div class="title">Special Requests</div>
+                <textarea
+                    placeholder="If you have any special requests, we will do our best to accommodate them and will confirm at check-in."></textarea>
+            </div>
+            <div class="payment">
+                <div class="paybill-account">
+                    <div class="paybill"><strong>Paybill</strong> 154566</div>
+                    <div class="account-no"><strong>Account No</strong> BQCKMRW</div>
+                </div>
+                <div class="payment-details">
+                    <div class="mpesa">
+                        <div class="title">
+                            <img src="images/M-PESA.png">
+                        </div>
+                        <div class="mpesa-input-group">
+                            <input type="number" placeholder="Or enter your Mpesa number">
+                            <div class="pay-button">Pay</div>
+                        </div>
+                    </div>
+                    <div class="visa">
+                        <div class="title">
+                            <img src="images/visa.png">
+                        </div>
+                        <div class="button">
+                            <div class="label">Tap to Pay</div>
+                        </div>
+                    </div>
+                    <div class="pay-later">
+                        <div class="title">Pay later</div>
+                        <div class="button">
+                            <div class="label">Tap to Select</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

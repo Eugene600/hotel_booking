@@ -12,9 +12,16 @@ import { Footer } from "./core/layout/footer/footer";
 export class App {
   constructor(public router: Router) { }
 
-  private hiddenHeaderRoutes = ['/login', '/explore-room', '/book-now-pay-later'];
+  private hiddenHeaderRoutes = [
+    '/login',
+    '/explore-room',
+    '/book-now-pay-later',
+    '/reservation-summary',
+    '/reservation-summary/edit-dates',
+  ];
 
   shouldShowHeader(): boolean {
-    return !this.hiddenHeaderRoutes.includes(this.router.url);
+    const cleanUrl = this.router.url.split('?')[0];
+    return !this.hiddenHeaderRoutes.includes(cleanUrl);
   }
 }

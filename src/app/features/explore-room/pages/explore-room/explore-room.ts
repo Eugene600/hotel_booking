@@ -12,6 +12,7 @@ import { MoreOffersRooms } from "../../components/more-offers-rooms/more-offers-
   templateUrl: './explore-room.html',
   styleUrl: './explore-room.css'
 })
+
 export class ExploreRoom {
   faReply = faReply;
   constructor(private location: Location) { }

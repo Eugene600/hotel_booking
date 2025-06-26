@@ -37,4 +37,9 @@ export const routes: Routes = [
     loadChildren: () =>
       import('./features/book-now-pay-later/book-now-pay-later-module').then((m) => m.BookNowPayLaterModule),
   },
+  {
+    path: 'reservation-summary',
+    loadChildren: () =>
+      import('./features/reservation-summary/reservation-summary-module').then((m) => m.ReservationSummaryModule),
+  },
 ];

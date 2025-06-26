@@ -3,6 +3,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faChevronRight, faAngleLeft, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';
 import { RoomPricing } from "../../components/room-pricing/room-pricing";
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -46,9 +47,18 @@ export class BookNowPayLater {
     this.rooms.update((list) => [...list, this.idCounter++]);
   }
 
-  constructor(private location: Location) { }
+  constructor(private location: Location, private router: Router) { }
 
   goBack() {
     this.location.back();
+  }
+
+  goToReservationSummary() {
+    this.router.navigate(['/reservation-summary'], {
+      queryParams: {
+        roomNumber: this.rooms().length,
+        roomTotal: this.totalPrice(),
+      }
+    })
   }
 }

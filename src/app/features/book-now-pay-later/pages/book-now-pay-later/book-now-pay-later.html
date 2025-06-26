@@ -21,7 +21,7 @@
             <fa-icon [icon]="faPlus"></fa-icon>
             <div class="outline-btn-label">Add Room</div>
         </button>
-        <button class="filled-btn">
+        <button class="filled-btn" (click)="goToReservationSummary()">
             <div class="filled-btn-label"><strong>Proceed</strong> (Kes {{totalPrice()}})</div>
             <fa-icon [icon]="faChevronRight"></fa-icon>
         </button>
