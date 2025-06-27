@@ -1,6 +1,7 @@
-import { Component, computed, input, signal } from '@angular/core';
+import { Component, computed, input, signal, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CustomCalendar } from '../custom-calendar/custom-calendar';
+import { BookingState } from '../../../core/services/booking-state';
 
 @Component({
   selector: 'app-booking-row',
@@ -9,6 +10,10 @@ import { CustomCalendar } from '../custom-calendar/custom-calendar';
   styleUrl: './booking-row.css'
 })
 export class BookingRow {
+
+  bookingState: BookingState = inject(BookingState);
+  
+
   adults = signal<number>(2);
   children = signal<number>(0);
 
@@ -75,9 +80,6 @@ export class BookingRow {
 
   showCalendar = signal<boolean>(false);
 
-  checkInDate = signal<Date | null>(new Date(new Date().getFullYear(), new Date().getMonth(), 23));
-  checkOutDate = signal<Date | null>(new Date(new Date().getFullYear(), new Date().getMonth(), 27));
-
   selectedField = signal<'checkIn' | 'checkOut' | null>(null);
 
   toggleCalendar(field: 'checkIn' | 'checkOut') {
@@ -87,13 +89,11 @@ export class BookingRow {
 
   onDateSelected(date: Date) {
     if (this.selectedField() === 'checkIn') {
-      this.checkInDate.set(date);
+      this.bookingState.setCheckInDate(date);
     } else if (this.selectedField() === 'checkOut') {
-      this.checkOutDate.set(date);
+      this.bookingState.setCheckOutDate(date);
     }
 
     this.showCalendar.set(false);
   }
-
-
 }

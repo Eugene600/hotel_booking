@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Header } from './layout/header/header';
 import {Footer} from "./layout/footer/footer";
+import { BookingState } from './services/booking-state';
 
 
 
@@ -10,7 +11,7 @@ import {Footer} from "./layout/footer/footer";
   imports: [
     CommonModule,
     Header,
-    Footer
+    Footer,
   ],
   exports: [
     Header,

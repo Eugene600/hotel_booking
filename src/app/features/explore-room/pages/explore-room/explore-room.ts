@@ -23,10 +23,6 @@ export class ExploreRoom {
     this.location.back();
   }
 
-  goHome() {
-    this.router.navigate(['/home']);
-  }
-
   rooms = [
     {
       id: 1,

@@ -1,11 +1,11 @@
 <div class="container">
     <div class="row-1">
-        <fa-icon [icon]="faAngleLeft" (click)="goToExploreRoom()"></fa-icon>
+        <fa-icon [icon]="faAngleLeft" (click)="goBack()"></fa-icon>
         <div class="text">Change the room preferences below and the pricing will update accordingly</div>
     </div>
 
     <div class="room-pricing">
-        @for (roomId of rooms(); let i = $index; track roomId) {
+        @for (roomId of bookingState.roomIds(); let i = $index; track roomId) {
         <div class="room-wrapper" style="position: relative">
             @if (i > 0) {
             <fa-icon [icon]="faXmark" class="remove-room-btn" (click)="removeRoom(roomId)"></fa-icon>
@@ -22,7 +22,7 @@
             <div class="outline-btn-label">Add Room</div>
         </button>
         <button class="filled-btn" (click)="goToReservationSummary()">
-            <div class="filled-btn-label"><strong>Proceed</strong> (Kes {{totalPrice()}})</div>
+            <div class="filled-btn-label"><strong>Proceed</strong> (Kes {{bookingState.totalPrice()}})</div>
             <fa-icon [icon]="faChevronRight"></fa-icon>
         </button>
     </div>

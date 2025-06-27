@@ -7,15 +7,15 @@
 
         <div class="booking-card" (click)="toggleCalendar('checkIn')">
             <div class="card-title">Check In</div>
-            <div class="card-main">{{ checkInDate()!.getDate() }}</div>
-            <div class="card-sub">{{ checkInDate()!.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }}
+            <div class="card-main">{{ bookingState.checkInDate()?.getDate() }}</div>
+            <div class="card-sub">{{ bookingState.checkInMonth() }}
             </div>
         </div>
 
         <div class="booking-card" (click)="toggleCalendar('checkOut')">
             <div class="card-title">Check Out</div>
-            <div class="card-main">{{ checkOutDate()!.getDate() }}</div>
-            <div class="card-sub">{{ checkOutDate()!.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }}
+            <div class="card-main">{{ bookingState.checkOutDate()?.getDate() }}</div>
+            <div class="card-sub">{{ bookingState.checkOutMonth() }}
             </div>
         </div>
     </div>

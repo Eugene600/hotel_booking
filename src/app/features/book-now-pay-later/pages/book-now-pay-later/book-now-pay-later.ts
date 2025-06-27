@@ -1,9 +1,10 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faPlus, faChevronRight, faAngleLeft, faXmark } from '@fortawesome/free-solid-svg-icons';
 import { Location } from '@angular/common';
 import { RoomPricing } from "../../components/room-pricing/room-pricing";
 import { Router } from '@angular/router';
+import { BookingState } from '../../../../core/services/booking-state';
 
 
 @Component({
@@ -18,33 +19,18 @@ export class BookNowPayLater {
   faChevronRight = faChevronRight;
   faXmark = faXmark;
 
-  rooms = signal<number[]>([0]);
-  private idCounter = 1;
+  bookingState: BookingState = inject(BookingState);
 
-  roomTotals = signal<Record<number, number>>({});
-
-  updateTotal(roomId: number, price: number) {
-    const current = { ...this.roomTotals() };
-    current[roomId] = price;
-    this.roomTotals.set(current);
-  }
-
-  removeRoom(roomId: number) {
-    this.rooms.update((list) => list.filter((id) => id !== roomId));
-
-    const updatedTotals = { ...this.roomTotals() };
-    delete updatedTotals[roomId];
-    this.roomTotals.set(updatedTotals);
-  }
-
-
-  totalPrice = computed(() => {
-    return Object.values(this.roomTotals()).reduce((sum, val) => sum + val, 0);
-  });
-
-  // Add new room
   addRoom() {
-    this.rooms.update((list) => [...list, this.idCounter++]);
+    this.bookingState.addRoom();
+  }
+
+  removeRoom(id: number) {
+    this.bookingState.removeRoom(id);
+  }
+
+  updateTotal(id: number, price: number) {
+    this.bookingState.updateRoomTotal(id, price);
   }
 
   constructor(private location: Location, private router: Router) { }
@@ -53,16 +39,7 @@ export class BookNowPayLater {
     this.location.back();
   }
 
-  goToExploreRoom() {
-    this.router.navigate(['/explore-room']);
-  }
-
   goToReservationSummary() {
-    this.router.navigate(['/reservation-summary'], {
-      queryParams: {
-        roomNumber: this.rooms().length,
-        roomTotal: this.totalPrice(),
-      }
-    })
+    this.router.navigate(['/reservation-summary']);
   }
 }

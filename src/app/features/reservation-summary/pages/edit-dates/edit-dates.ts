@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, inject } from '@angular/core';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faBed } from '@fortawesome/free-solid-svg-icons';
 import { SharedModule } from '../../../../shared/shared-module';
 import { Router } from '@angular/router';
+import { BookingState } from '../../../../core/services/booking-state';
 
 @Component({
   selector: 'app-edit-dates',
@@ -12,6 +13,8 @@ import { Router } from '@angular/router';
 })
 export class EditDates {
   faBed = faBed;
+
+  bookingState: BookingState = inject(BookingState);
 
   showCalendar = signal<boolean>(false);
 
@@ -27,9 +30,9 @@ export class EditDates {
 
   onDateSelected(date: Date) {
     if (this.selectedField() === 'checkIn') {
-      this.checkInDate.set(date);
+      this.bookingState.setCheckInDate(date);
     } else if (this.selectedField() === 'checkOut') {
-      this.checkOutDate.set(date);
+      this.bookingState.setCheckOutDate(date);
     }
 
     this.showCalendar.set(false);
@@ -39,12 +42,7 @@ export class EditDates {
 
   goToReservationSummary() {
     this.router.navigate(['/reservation-summary'], {
-      queryParams: {
-        checkInDate: this.checkInDate()?.getDate(),
-        checkOutDate: this.checkOutDate()?.getDate(),
-        checkInDateMonth: this.checkInDate()?.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }),
-        checkOutDateMonth: this.checkOutDate()?.toLocaleDateString('en-US', { month: 'short', year: 'numeric' })
-      }
+      replaceUrl: true,
     })
   }
 

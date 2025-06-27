@@ -9,14 +9,14 @@
         <div class="date-selection-container">
             <div class="date-card" (click)="toggleCalendar('checkIn')">
                 <div class="card-label">Check In</div>
-                <div class="card-day">{{ checkInDate()!.getDate() }}</div>
-                <div class="card-month-year">{{ checkInDate()!.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }}</div>
+                <div class="card-day">{{ bookingState.checkInDate()?.getDate() }}</div>
+                <div class="card-month-year">{{ bookingState.checkInMonth() }}</div>
             </div>
 
             <div (click)="toggleCalendar('checkOut')" class="date-card">
                 <div class="card-label">Check Out</div>
-                <div class="card-day">{{ checkOutDate()!.getDate() }}</div>
-                <div class="card-month-year">{{ checkOutDate()!.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }}</div>
+                <div class="card-day">{{ bookingState.checkOutDate()?.getDate() }}</div>
+                <div class="card-month-year">{{ bookingState.checkOutMonth() }}</div>
             </div>
 
             <div class="update-dates-button" (click)="goToReservationSummary()">
