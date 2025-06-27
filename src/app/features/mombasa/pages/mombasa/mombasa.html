@@ -1,0 +1,23 @@
+<div class="page-container">
+    <section class="page-section">
+        <app-booking-details />
+    </section>
+
+    <section class="room-section">
+        <div class="sticky-header">
+            <div class="sticky-content" (click)="goToLogin()">
+                <div class="sticky-header-label">For a Personalized Experience<strong class="sticky-header-strong"> Log
+                        in</strong></div>
+            </div>
+        </div>
+
+        @for (room of rooms; let i=$index ;track room.id) {
+        <app-room-display [description]="room.description" [location]="room.location" [price]="room.price"
+            [roomsLeft]="room.roomsLeft" [title]="room.title" />
+        }
+    </section>
+
+    <section class="footer-content">
+        <app-footer />
+    </section>
+</div>

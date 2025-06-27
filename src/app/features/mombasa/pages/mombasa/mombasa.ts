@@ -1,17 +1,16 @@
 import { Component, signal } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared-module';
+import { Room } from '../../../../shared/models/room.model';
 import { Router } from '@angular/router';
 import { Footer } from '../../../../core/layout/footer/footer';
-import { Room } from '../../../../shared/models/room.model';
-
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-mombasa',
   imports: [SharedModule, Footer],
-  templateUrl: './home.html',
-  styleUrl: './home.css'
+  templateUrl: './mombasa.html',
+  styleUrl: './mombasa.css'
 })
-export class Home {
+export class Mombasa {
   showStickyHeader = signal<boolean>(false);
 
   constructor(private router: Router) { }
@@ -32,12 +31,12 @@ export class Home {
     },
     {
       id: 2,
-      title: 'Deluxe Twin Room',
+      title: 'Ocean View Suite',
       description:
-        'Spacious twin room perfect for business or leisure travelers. Includes premium bedding, rainfall shower, high-speed internet, and access to the rooftop lounge and fitness center.',
-      price: 13400,
-      location: 'Radisson Blu Hotel, Upper Hill',
-      roomsLeft: 6,
+        'Enjoy breathtaking views of the ocean in our luxurious Ocean View Suite, complete with modern amenities, spacious balcony, and premium bedding. Perfect for a romantic getaway or family retreat.',
+      price: 67200,
+      location: 'Serena Beach Resort & Spa',
+      roomsLeft: 5,
     },
   ];
 }

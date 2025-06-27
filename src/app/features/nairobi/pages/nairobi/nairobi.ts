@@ -1,17 +1,16 @@
 import { Component, signal } from '@angular/core';
 import { SharedModule } from '../../../../shared/shared-module';
+import { Room } from '../../../../shared/models/room.model';
 import { Router } from '@angular/router';
 import { Footer } from '../../../../core/layout/footer/footer';
-import { Room } from '../../../../shared/models/room.model';
-
 
 @Component({
-  selector: 'app-home',
+  selector: 'app-nairobi',
   imports: [SharedModule, Footer],
-  templateUrl: './home.html',
-  styleUrl: './home.css'
+  templateUrl: './nairobi.html',
+  styleUrl: './nairobi.css'
 })
-export class Home {
+export class Nairobi {
   showStickyHeader = signal<boolean>(false);
 
   constructor(private router: Router) { }
@@ -23,12 +22,12 @@ export class Home {
   rooms: Room[] = [
     {
       id: 1,
-      title: 'Garden Room',
+      title: 'Executive City Room',
       description:
-        'The tastefully furnished and cosy rooms are all en suite, with a central ceiling fan, direct dial telephone, satellite TV and a workstation with wireless capabilities. Personal valets provide a 24-hour room service.',
-      price: 48100,
-      location: 'Indian Ocean Beach Resort',
-      roomsLeft: 8,
+        'Modern, stylish and well-equipped, the Executive City Room offers guests a comfortable stay with panoramic views of Nairobi’s skyline. Comes with free Wi-Fi, smart TV, minibar, and ergonomic workspace.',
+      price: 15200,
+      location: 'Villa Rosa Kempinski, Nairobi',
+      roomsLeft: 4,
     },
     {
       id: 2,

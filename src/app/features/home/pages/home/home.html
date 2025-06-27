@@ -13,12 +13,14 @@
             in</strong></div>
       </div>
     </div>
-    <app-room-display />
-    <app-room-display />
 
+    @for (room of rooms; let i=$index ;track room.id) {
+    <app-room-display [description]="room.description" [location]="room.location" [price]="room.price"
+      [roomsLeft]="room.roomsLeft" [title]="room.title" />
+    }
   </section>
 
   <section class="footer-content">
-    <app-footer/>
+    <app-footer />
   </section>
 </div>

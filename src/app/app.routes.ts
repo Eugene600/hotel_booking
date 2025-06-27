@@ -13,14 +13,19 @@ export const routes: Routes = [
       import('./features/home/home-module').then((m) => m.HomeModule),
   },
   {
-    path: 'about',
+    path: 'mombasa',
     loadChildren: () =>
-      import('./features/about/about-module').then((m) => m.AboutModule),
+      import('./features/mombasa/mombasa-module').then((m) => m.MombasaModule),
   },
   {
-    path: 'services',
+    path: 'nairobi',
     loadChildren: () =>
-      import('./features/services/services-module').then((m) => m.ServicesModule),
+      import('./features/nairobi/nairobi-module').then((m) => m.NairobiModule),
+  },
+  {
+    path: 'elementaita',
+    loadChildren: () =>
+      import('./features/elementaita/elementaita-module').then((m) => m.ElementaitaModule),
   },
   {
     path: 'login',

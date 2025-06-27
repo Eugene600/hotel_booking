@@ -9,13 +9,13 @@
     <div class="room-details">
         <!-- Top Info -->
         <div class="room-top">
-            <div class="location"><fa-icon [icon]="faLocationDot"></fa-icon> Indian Ocean Beach Resort</div>
-            <span class="availability"><strong>8 Rooms Left</strong></span>
+            <div class="location"><fa-icon [icon]="faLocationDot"></fa-icon> {{location()}}</div>
+            <span class="availability"><strong>{{roomsLeft()}} Rooms Left</strong></span>
         </div>
 
         <!-- Title & Rating -->
         <div class="title-rating">
-            <h2 class="room-title">Garden Room</h2>
+            <h2 class="room-title">{{title()}}</h2>
             <div class="rating">⭐⭐⭐⭐☆</div>
         </div>
 
@@ -23,11 +23,7 @@
         <!-- Description -->
         <div class="room-description">
             <h4>Description</h4>
-            <p>
-                The tastefully furnished and cosy rooms are all en suite, with a central ceiling fan, direct dial
-                telephone, satellite TV and a workstation with wireless capabilities. Personal valets provide a 24-hour
-                room service.
-            </p>
+            <p>{{description()}}</p>
         </div>
     </div>
 
@@ -45,10 +41,10 @@
                     <small>Breakfast Included)</small>
                 </div>
                 <div class="price">
-                    <span class="currency">Kes</span> <strong class="amount">48,100</strong>
+                    <span class="currency">Kes</span> <strong class="amount">{{price()}}</strong>
                 </div>
             </div>
-            
+
             <div class="room-actions">
                 <button class="outline-btn" (click)="goToExploreRoom()">
                     <div class="outline-btn-label">Explore Room </div><span class="arrow">→</span>
