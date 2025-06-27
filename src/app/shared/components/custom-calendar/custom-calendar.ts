@@ -107,13 +107,12 @@ export class CustomCalendar implements OnInit {
     return date.toDateString() === today.toDateString();
   }
 
-  position = input<'above' | 'below'>('above');
+  position = input<'above' | 'below' | 'center'>('above');
 
   constructor(private elRef: ElementRef, private renderer: Renderer2) {
     effect(() => {
-      const value = this.position(); // call signal
+      const value = this.position(); 
 
-      // Remove old class and add new one dynamically
       this.renderer.removeClass(this.elRef.nativeElement, 'position-above');
       this.renderer.removeClass(this.elRef.nativeElement, 'position-below');
       this.renderer.addClass(this.elRef.nativeElement, `position-${value}`);
