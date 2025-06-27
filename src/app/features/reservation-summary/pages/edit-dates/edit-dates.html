@@ -1,8 +1,9 @@
 <div class="container">
-    <div class="logo"><fa-icon [icon]="faBed"></fa-icon></div>
+    <img src="images/placeholder_logo.png" alt="placeholder logo" class="logo">
+
 
     @if (showCalendar()) {
-    <app-custom-calendar class="calendar-popup" (dateSelected)="onDateSelected($event)" [position]="'center'"/> 
+    <app-custom-calendar class="calendar-popup" (dateSelected)="onDateSelected($event)" [position]="'center'" />
     }
 
     <div class="date-picker-wrapper">
