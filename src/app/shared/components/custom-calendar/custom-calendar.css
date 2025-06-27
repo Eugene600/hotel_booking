@@ -1,3 +1,14 @@
+:host(.position-above) .date-picker-container {
+  bottom: 120%;
+  margin-bottom: 0.5rem;
+}
+
+:host(.position-below) .date-picker-container {
+  top: 100%;
+  bottom: auto;
+  margin-top: 0.5rem;
+}
+
 .date-picker-container {
     width: 18.75rem;
     background-color: #fff;
@@ -6,10 +17,8 @@
     padding: 1rem;
     position: absolute;
     z-index: 1000;
-    bottom: 120%;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 0.5rem;
 }
 
 .calendar-header {

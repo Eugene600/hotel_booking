@@ -1,4 +1,4 @@
-import { Component, computed, input, OnInit, output, signal } from '@angular/core';
+import { Component, computed, effect, ElementRef, input, OnInit, output, Renderer2, signal } from '@angular/core';
 
 @Component({
   selector: 'app-custom-calendar',
@@ -16,7 +16,7 @@ export class CustomCalendar implements OnInit {
   currentMonth = signal(new Date().getMonth());
   currentYear = signal(new Date().getFullYear());
 
-  weekdays = ['S', 'M', 'T', 'W', 'T', 'F', 'S']; 
+  weekdays = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
   currentMonthName = computed(() => {
     const date = new Date(this.currentYear(), this.currentMonth(), 1);
@@ -44,8 +44,8 @@ export class CustomCalendar implements OnInit {
     }
 
     const totalCells = days.length;
-    const remainingCells = 42 - totalCells; 
-    if (totalCells % 7 !== 0) { 
+    const remainingCells = 42 - totalCells;
+    if (totalCells % 7 !== 0) {
       for (let i = 0; i < (7 - (totalCells % 7)); i++) {
         days.push({ date: null });
       }
@@ -66,7 +66,7 @@ export class CustomCalendar implements OnInit {
     let newMonth = this.currentMonth() - 1;
     let newYear = this.currentYear();
     if (newMonth < 0) {
-      newMonth = 11; 
+      newMonth = 11;
       newYear--;
     }
     this.currentMonth.set(newMonth);
@@ -77,7 +77,7 @@ export class CustomCalendar implements OnInit {
     let newMonth = this.currentMonth() + 1;
     let newYear = this.currentYear();
     if (newMonth > 11) {
-      newMonth = 0; 
+      newMonth = 0;
       newYear++;
     }
     this.currentMonth.set(newMonth);
@@ -105,5 +105,18 @@ export class CustomCalendar implements OnInit {
   isToday(date: Date): boolean {
     const today = new Date();
     return date.toDateString() === today.toDateString();
+  }
+
+  position = input<'above' | 'below'>('above');
+
+  constructor(private elRef: ElementRef, private renderer: Renderer2) {
+    effect(() => {
+      const value = this.position(); // call signal
+
+      // Remove old class and add new one dynamically
+      this.renderer.removeClass(this.elRef.nativeElement, 'position-above');
+      this.renderer.removeClass(this.elRef.nativeElement, 'position-below');
+      this.renderer.addClass(this.elRef.nativeElement, `position-${value}`);
+    });
   }
 }

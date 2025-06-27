@@ -2,7 +2,7 @@
     <!-- Check-in / Check-out Cards -->
     <div class="calendar-cards">
         @if (showCalendar()) {
-        <app-custom-calendar (dateSelected)="onDateSelected($event)" />
+        <app-custom-calendar (dateSelected)="onDateSelected($event)" [position]="calendarPosition()" /> 
         }
 
         <div class="booking-card" (click)="toggleCalendar('checkIn')">

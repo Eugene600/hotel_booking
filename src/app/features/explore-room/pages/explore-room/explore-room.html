@@ -4,7 +4,7 @@
             <button class="back-btn" (click)="goHome()">
                 <fa-icon [icon]="faReply"></fa-icon>
             </button>
-            <app-booking-row />
+            <app-booking-row [calendarPosition]="'below'"/>
         </div>
         <div class="room-details">
             <app-room-details />

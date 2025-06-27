@@ -5,15 +5,13 @@
     scroll-snap-type: y mandatory;
     height: 80vh;
     scroll-behavior: smooth;
-}
-
-.room-section {
-    height: 80vh;
     scroll-snap-align: start;
 }
 
 .booking-details {
     display: flex;
+    padding: 0.5rem;
+    gap: 1rem;
 }
 
 .back-btn {
@@ -31,7 +29,6 @@
 .more-offers-container {
     display: flex;
     flex-direction: column;
-    margin: 1rem;
 }
 
 .more-offers {
@@ -79,9 +76,9 @@ hr {
 
 .more-offers-rooms {
     display: flex;
-    gap: 1rem;
     align-items: stretch;
     overflow: hidden;
+    padding: 1rem;
 }
 
 

@@ -6,7 +6,6 @@ hr {
 
 .room-details-container {
     display: flex;
-    gap: 1rem;
     position: relative;
 }
 
@@ -14,6 +13,7 @@ hr {
     flex: 2;
     display: flex;
     gap: 1rem;
+    padding: 0 3rem;
 }
 
 .vertical-divider {
@@ -21,7 +21,7 @@ hr {
     background-color: black;
     opacity: 0.6;
     align-self: stretch;
-    margin: 0 1rem;
+    /* margin: 0 1rem; */
     margin-top: -0.5rem;
     margin-bottom: -2rem;
 }
@@ -42,7 +42,7 @@ hr {
 
 .row-1 {
     display: flex;
-    justify-content: space-between;
+    gap: 6rem;
 }
 
 .row-1 div {
@@ -80,13 +80,13 @@ hr {
     flex: 1;
     display: flex;
     flex-direction: column;
-
 }
 
 .pricing {
     margin-top: 1rem;
     gap: 1rem;
     flex-direction: column;
+    padding: 0 2rem;
 }
 
 .pricing-row {
@@ -114,9 +114,8 @@ hr {
 
 .price-info {
     display: flex;
-    padding-top: 1rem;
-    /* margin-top: 4rem; */
     justify-content: space-between;
+    padding: 0 2rem;
 
 }
 

@@ -1,4 +1,4 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, input, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CustomCalendar } from '../custom-calendar/custom-calendar';
 
@@ -11,6 +11,8 @@ import { CustomCalendar } from '../custom-calendar/custom-calendar';
 export class BookingRow {
   adults = signal<number>(2);
   children = signal<number>(0);
+
+  calendarPosition = input<'above' | 'below'>('above');
 
   // Which card is active (opened)
   activeCardAdults = signal<'adults' | null>(null);
