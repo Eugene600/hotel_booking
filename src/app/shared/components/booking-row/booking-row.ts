@@ -1,9 +1,10 @@
 import { Component, computed, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { CustomCalendar } from '../custom-calendar/custom-calendar';
 
 @Component({
   selector: 'app-booking-row',
-  imports: [FormsModule],
+  imports: [FormsModule, CustomCalendar],
   templateUrl: './booking-row.html',
   styleUrl: './booking-row.css'
 })
@@ -68,4 +69,29 @@ export class BookingRow {
     const index = this.selectedSegment();
     return `translateY(${index * 20}%)`;
   });
+
+
+  showCalendar = signal<boolean>(false);
+
+  checkInDate = signal<Date | null>(new Date(new Date().getFullYear(), new Date().getMonth(), 23));
+  checkOutDate = signal<Date | null>(new Date(new Date().getFullYear(), new Date().getMonth(), 27));
+
+  selectedField = signal<'checkIn' | 'checkOut' | null>(null);
+
+  toggleCalendar(field: 'checkIn' | 'checkOut') {
+    this.selectedField.set(field);
+    this.showCalendar.set(!this.showCalendar());
+  }
+
+  onDateSelected(date: Date) {
+    if (this.selectedField() === 'checkIn') {
+      this.checkInDate.set(date);
+    } else if (this.selectedField() === 'checkOut') {
+      this.checkOutDate.set(date);
+    }
+
+    this.showCalendar.set(false);
+  }
+
+
 }

@@ -53,6 +53,10 @@ export class BookNowPayLater {
     this.location.back();
   }
 
+  goToExploreRoom() {
+    this.router.navigate(['/explore-room']);
+  }
+
   goToReservationSummary() {
     this.router.navigate(['/reservation-summary'], {
       queryParams: {

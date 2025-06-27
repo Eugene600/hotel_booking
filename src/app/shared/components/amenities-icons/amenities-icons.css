@@ -1,21 +1,21 @@
 .amenity-icons {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.7rem;
+    gap: 1rem;
 }
 
 .amenity-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 2.75rem;
+    width: 3rem;
     text-align: center;
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 
 .icon-circle {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     background-color: #f0ebf8;
     display: flex;

@@ -5,6 +5,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { faReply } from '@fortawesome/free-solid-svg-icons';
 import { RoomDetails } from "../../components/room-details/room-details";
 import { MoreOffersRooms } from "../../components/more-offers-rooms/more-offers-rooms";
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-explore-room',
@@ -15,10 +16,14 @@ import { MoreOffersRooms } from "../../components/more-offers-rooms/more-offers-
 
 export class ExploreRoom {
   faReply = faReply;
-  constructor(private location: Location) { }
+  constructor(private location: Location, private router: Router) { }
 
   goBack() {
     this.location.back();
+  }
+
+  goHome() {
+    this.router.navigate(['/home']);
   }
 
   rooms = [

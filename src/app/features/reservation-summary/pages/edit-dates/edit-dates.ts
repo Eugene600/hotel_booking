@@ -22,7 +22,7 @@ export class EditDates {
 
   toggleCalendar(field: 'checkIn' | 'checkOut') {
     this.selectedField.set(field);
-    this.showCalendar.set(true);
+    this.showCalendar.set(!this.showCalendar());
   }
 
   onDateSelected(date: Date) {

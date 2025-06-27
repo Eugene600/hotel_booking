@@ -1,15 +1,23 @@
 <div class="booking-form-row">
     <!-- Check-in / Check-out Cards -->
-    <div class="booking-card">
-        <div class="card-title">Check In</div>
-        <div class="card-main">23</div>
-        <div class="card-sub">Apr 2023</div>
-    </div>
+    <div class="calendar-cards">
+        @if (showCalendar()) {
+        <app-custom-calendar (dateSelected)="onDateSelected($event)" />
+        }
 
-    <div class="booking-card">
-        <div class="card-title">Check Out</div>
-        <div class="card-main">27</div>
-        <div class="card-sub">Apr 2023</div>
+        <div class="booking-card" (click)="toggleCalendar('checkIn')">
+            <div class="card-title">Check In</div>
+            <div class="card-main">{{ checkInDate()!.getDate() }}</div>
+            <div class="card-sub">{{ checkInDate()!.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }}
+            </div>
+        </div>
+
+        <div class="booking-card" (click)="toggleCalendar('checkOut')">
+            <div class="card-title">Check Out</div>
+            <div class="card-main">{{ checkOutDate()!.getDate() }}</div>
+            <div class="card-sub">{{ checkOutDate()!.toLocaleDateString('en-US', { month: 'short', year: 'numeric' }) }}
+            </div>
+        </div>
     </div>
 
     <!-- Adults / Children Cards -->

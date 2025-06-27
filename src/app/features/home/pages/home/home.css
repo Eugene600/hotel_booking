@@ -10,8 +10,7 @@
 }
 
 .room-section {
-  height: 80vh;
-  scroll-snap-align: start;
+  position: relative;
 }
 
 .sticky-header {
