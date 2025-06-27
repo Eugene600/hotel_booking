@@ -16,6 +16,7 @@
 .row-1 fa-icon {
     position: absolute;
     left: 0;
+    padding-left: 2rem;
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -27,7 +28,8 @@
 
 .row-2 {
     display: flex;
-    justify-content: space-between;
+    padding: 2rem;
+    gap: 1.5rem;
 }
 
 .price-total,
@@ -158,6 +160,7 @@ input:focus {
     flex-direction: column;
     justify-content: space-between;
     gap: 1rem;
+    width: 31.25rem;
 }
 
 .special-requests {
@@ -176,7 +179,7 @@ input:focus {
 }
 
 .special-requests textarea {
-    width: 18.75rem;
+    width: 28rem;
     height: 90%;
     resize: none;
     line-height: 1.5;
@@ -199,6 +202,7 @@ input:focus {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    padding: 2rem;
     background: #fff;
     border-radius: 8px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
@@ -317,11 +321,11 @@ input:focus {
 }
 
 .payment-details .button {
-    flex-grow: 1; 
     display: flex; 
     justify-content: center; 
     align-items: center; 
     height: 50px; 
+    width: 210px;
     background-color: white; 
     border: 1px solid #e0e0e0; 
     border-radius: 25px; 
@@ -343,7 +347,7 @@ input:focus {
 
 .payment-details .title {
     text-transform: uppercase;
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-right: 0.4rem;
     color: #666; 
     font-weight: bold;
