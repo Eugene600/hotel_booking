@@ -2,7 +2,7 @@
     <!-- Check-in / Check-out Cards -->
     <div class="calendar-cards">
         @if (showCalendar()) {
-        <app-custom-calendar (dateSelected)="onDateSelected($event)" [position]="calendarPosition()" /> 
+        <app-custom-calendar (dateSelected)="onDateSelected($event)" [position]="calendarPosition()" />
         }
 
         <div class="booking-card" (click)="toggleCalendar('checkIn')">
@@ -80,7 +80,16 @@
 
     <!-- Button container -->
     <div class="button-container">
-        <button class="primary">Have a Promotion Code</button>
+        <div class="promo-wrapper">
+            <button class="primary" (click)="togglePromo()">Have a Promotion Code</button>
+
+            @if (showPromoInput()) {
+            <div class="promo-input">
+                <input type="text" placeholder="Enter promo code" />
+                <button (click)="applyPromo()">Apply</button>
+            </div>
+            }
+        </div>
         <button class="check-availability">
 
         </button>

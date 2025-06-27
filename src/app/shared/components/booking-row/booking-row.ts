@@ -12,7 +12,7 @@ import { BookingState } from '../../../core/services/booking-state';
 export class BookingRow {
 
   bookingState: BookingState = inject(BookingState);
-  
+
 
   adults = signal<number>(2);
   children = signal<number>(0);
@@ -95,5 +95,16 @@ export class BookingRow {
     }
 
     this.showCalendar.set(false);
+  }
+
+  //Promo code section
+  showPromoInput = signal(false);
+
+  togglePromo() {
+    this.showPromoInput.update((v) => !v);
+  }
+
+  applyPromo() {
+    this.showPromoInput.set(false);
   }
 }
