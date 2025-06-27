@@ -6,10 +6,11 @@ import { faReply } from '@fortawesome/free-solid-svg-icons';
 import { RoomDetails } from "../../components/room-details/room-details";
 import { MoreOffersRooms } from "../../components/more-offers-rooms/more-offers-rooms";
 import { Router } from '@angular/router';
+import { Footer } from '../../../../core/layout/footer/footer';
 
 @Component({
   selector: 'app-explore-room',
-  imports: [SharedModule, FontAwesomeModule, RoomDetails, MoreOffersRooms],
+  imports: [SharedModule, FontAwesomeModule, RoomDetails, MoreOffersRooms, Footer],
   templateUrl: './explore-room.html',
   styleUrl: './explore-room.css'
 })
