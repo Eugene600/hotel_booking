@@ -10,9 +10,14 @@
   max-width: 1400px;
   overflow-y: auto;
   overflow-x: hidden;
+  scrollbar-width: none; 
 }
 
 .content-box {
   width: 100%;
   box-sizing: border-box;
+}
+
+.app-container::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
